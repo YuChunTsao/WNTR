@@ -515,5 +515,18 @@ class ENepanet():
 
         return
 
+    def ENsetlinkvalue(self, iIndex, iCode, fValue):
+        """Sets a property value for a link.
 
-    
+        Parameters
+        ------------
+        iIndex : int
+            Link index
+        iCode : int
+            Link parameter code (see toolkit.optLinkParams)
+        fValue : float
+            Value of link's parameter
+        """
+        self.errorcode = self.ENlib.ENsetlinkvalue(iIndex, iCode, fValue)
+        self._error()
+        return
